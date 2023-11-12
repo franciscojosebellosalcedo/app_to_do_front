@@ -1,12 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
+import Routers from './routers/Routers';
 
 function App() {
-  return (
-    <div className="App">
-     
-    </div>
-  );
+  return <Routers/>
 }
 
 export default App;
