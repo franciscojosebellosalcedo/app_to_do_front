@@ -1,0 +1,145 @@
+.container__modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-modal);
+}
+.modal{
+    width: 90%;
+    margin: 0 auto;
+    color: var(--color-text);
+    position: relative;
+    height: max-content;
+    background-color: rgb(37, 32, 43);
+    border-radius: 8px;
+    padding: 20px;
+}
+.modal__title{
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+.modal__description{
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 13px;
+}
+.form__wor__area{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 30px auto;
+    gap: 20px;
+}
+.form__section{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.form__section > input , .form__section > div{
+    background-color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    border-radius: 3px;
+    color: var(--color-text);
+    padding-left: 6px;
+    height: 30px;
+}
+.form__section > p{
+    font-size: 13px;
+}
+.form__section > label{
+    font-size: 12px;
+    font-weight: 800;
+}
+.form__section > textarea{
+    height: 90px;
+    resize: none;
+    border: 1px solid rgba(255, 255, 255, 0.473);
+    background-color: inherit;
+    color: var(--color-text);
+    border-radius: 3px;
+}
+.btn__create__work__area{
+    height: 40px;
+    background-color: var(--color-primary);
+    border-radius: 6px;
+    color: var(--color-text);
+    cursor: pointer;
+}
+.disable__cursor{
+    cursor: not-allowed !important;
+    opacity: .5;
+}
+.icon__close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+.input__select{
+    position: relative;
+}
+.input__select > div{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: 100%;
+    justify-content: space-between;
+    font-size: 13px;
+}
+.options__select{
+    position: absolute;
+    left: 0px;
+    top: 35px;
+    width: 100%;
+    z-index: 1;
+    border: var(--border);
+    display: flex;
+    height: max-content;
+    flex-direction: column;
+    font-size: 13px;
+}
+.option__select{
+    padding: 10px;
+    cursor: pointer;
+}
+.option__select:hover{
+    background-color: var(--bg-hover);
+}
+.icon__dropdown{
+    font-size: 17px;
+}
+
+@media screen and (min-width:548px) {
+    .modal{
+        width: 500px;
+    }
+    .modal__title{
+        font-size: 25px;
+    }
+    .modal__description{
+        font-size: 15px;
+    }
+    .form__section{
+        margin-top: 15px;
+    }
+    .form__section > input , .form__section > div{
+        height: 40px;
+    }
+    .form__section > label{
+        font-size: 14px;
+    }
+    .options__select{
+        top: 45px;
+    }
+}

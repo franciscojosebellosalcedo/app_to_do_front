@@ -5,7 +5,8 @@ import Login from '../pages/login/Login'
 import Register from '../pages/register/Register'
 import LoginGuard from '../guards/LoginGuard'
 import AuthGuard from '../guards/AuthGuard'
-import Dashboard from '../pages/dashboard/Dashboard'
+import WorksArea from '../pages/dashboard/workArea/WorksArea'
+import WorkAreaDetails from '../pages/dashboard/workAreaDetails/WorkAreaDetails'
 
 const Routers = () => {
   return (
@@ -22,13 +23,12 @@ const Routers = () => {
         </Route>
 
         <Route element={<AuthGuard />}>
-          <Route path={ROUTES.DASHBOARD.PATH_INITIAL} element={<Dashboard/>}>
-            <Route path={"hola1"} element={<div>hola1</div>}></Route>
-            <Route path={"hola2"} element={<div>hola2</div>}></Route>
-          </Route>
+          <Route path={ROUTES.WORKS_AREAS} element={<WorksArea/>}></Route>
         </Route>
 
-       
+        <Route element={<AuthGuard />}>
+          <Route path={ROUTES.WORK_AREA_DETAIL+"/:id"} element={<WorkAreaDetails/>}></Route>
+        </Route>
 
       </Routes>
     </BrowserRouter>

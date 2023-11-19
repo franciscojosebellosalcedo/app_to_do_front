@@ -11,6 +11,15 @@ export const login=async (body)=>{
     return response.json();
 }
 
+export const getNewTokenUser=async (token)=>{
+    headers["access-token"]=`bearer ${token}`;
+    const response=await fetch(URL_BASE+"/user/refress-token",{
+        method:"GET",
+        headers,
+    });
+    return response.json(); 
+}
+
 export const createAccontUser=async (body)=>{
     const response=await fetch(URL_BASE+"/user",{
         method:"POST",

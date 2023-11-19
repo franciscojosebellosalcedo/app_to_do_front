@@ -3,7 +3,7 @@ import {Outlet, Navigate} from "react-router-dom";
 import { ROUTES } from '../constanst/constants';
 
 const AuthGuard = () => {
-    const data=localStorage.getItem("token");
+    const data=localStorage.getItem("data");
   return data ? <Outlet/>:<Navigate replace to={ROUTES.LOGIN}/> ;
 }
 

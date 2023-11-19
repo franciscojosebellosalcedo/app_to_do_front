@@ -1,0 +1,83 @@
+.container__section__work__area__details{
+    width: 90%;
+    margin: 0 auto;
+}
+.icon__back__section{
+    font-size: 35px;
+    color: var(--color-text);
+    cursor: pointer;
+}
+.container__content__work__area{
+    margin-top: 20px;
+}
+.content__main__work__area > div{
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+}
+.letter__work__area{
+    padding:20px 25px;
+    background-color: aqua;
+    border-radius:8px;
+    font-weight: 900;
+    color: #000000;
+}
+.content__info__work__area > div{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.name__work__area{
+    font-size: 18px;
+    color: var(--color-text);
+}
+.icon__edit__work__area{
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--color-text);
+}
+.btn__invitar__members{
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    font-size: 13px;
+    padding: 6px 10px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+.description__work__area{
+    margin-top: 15px;
+    font-size: 13px;
+    color: var(--color-text);
+}
+.content__boards{
+    margin-top: 15px;
+}
+.title__content__boards{
+    font-size: 20px;
+    color: var(--color-text);
+    margin-bottom: 20px;
+}
+.dividor{
+    width: 100%;
+    margin-top: 5px;
+    border:0.3px solid rgba(255, 255, 255, 0.234);
+}
+
+.grid__boards{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 6px;
+}
+
+@media screen and (min-width:680px) {
+    .grid__boards{
+        grid-template-columns:repeat(3,1fr) ;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .grid__boards{
+        grid-template-columns:repeat(4,1fr) ;
+    }
+}

@@ -1,15 +1,16 @@
+
+
 export const ROUTES={
    LOGIN:"/",
-   REGISTER:"register",
-   DASHBOARD:{
-      PATH_INITIAL:"dashboard",
-      PATH_BOARDS:"boards",
-      PATH_BOARD:"board/:id/:name",
-      PATH_WORK_AREA:"work-area/:id/:name",
-      PATH_WORK_AREA_MEMBERS:"work-area/:id/:name/members"
-   },
+   REGISTER:"/register",
+   WORKS_AREAS:"/works-areas",
+   WORK_AREA_DETAIL:"/work-area",
    NOT_FOUND:"*"
 }
+
+export const OPTIONS_SELECT=["Ninguno","Educación","Empresarial","Personal","Otro"];
+
+export const OPTIONS_COLOR=["#2057ca","#f07848","#fa8cb1","#6b8f0b","#6ed88b","#0c181c","#C2151B","#722D24","#80B9CE"]
 
 export const headers={
    "Access-Control-Allow-Origin": "*",

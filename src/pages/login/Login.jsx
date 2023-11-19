@@ -55,7 +55,7 @@ const Login = () => {
         const responseLogin=await login(credencials);
         if(responseLogin.status===200 && responseLogin.response){
           dispatch(setUser(responseLogin.data));
-          navigate(ROUTES.DASHBOARD);
+          navigate(`${ROUTES.WORKS_AREAS}`);
         }else{
           toast.error(responseLogin.message);
         }

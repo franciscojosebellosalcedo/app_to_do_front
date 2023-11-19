@@ -1,0 +1,28 @@
+.conatiner__content{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+.work__area__title{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var(--color-text);
+}
+.descripcion__work__area{
+    color: var(--color-text);
+    font-size: 14px;
+}
+.create__work__area{
+    background-color: inherit;
+    margin-top: 30px;
+    color: var(--color-text);
+    font-size: 15px;
+    padding: 8px 7px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: var(--bg-hover);
+}
+
+.icon__add{
+    font-size: 20px;
+}

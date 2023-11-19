@@ -13,6 +13,13 @@
     --border:.5px solid #ffffff5c;
     --color-primary:rgba(0, 0, 255, 0.706);
     --bg-dashboard:rgba(18, 15, 27, 0.874);
+    --bg-hover:rgba(255, 255, 255, 0.15);
+    --bg-modal:rgba(0, 0, 0, 0.561);
+    --color-text:rgba(255, 255, 255, 0.741);
+    --color-danger:rgba(255, 0, 0, 0.423);
+}
+body{
+    overflow-x: hidden;
 }
 
 .primary{
@@ -29,12 +36,15 @@
 .box__shadow{
     box-shadow: 0px 0px 5px 0px #ffffff;
 }
-.background__dashboard{
+
+.layaut{
     background-color: var(--bg-dashboard);
+    /* width: 100vw;
+    height: ; */
 }
 .background__element__absolute{
-    border-radius: 8px;
-    background-color: rgba(0, 0, 0, 0.335);
+    border-radius: 4px;
+    background-color: rgb(37, 32, 43);
 }
 .color__text{
     color: rgba(255, 255, 255, 0.57);
