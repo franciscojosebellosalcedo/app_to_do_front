@@ -103,9 +103,9 @@
 }
 .icon__favorite{
     position: absolute;
-    bottom: 10px;
+    bottom: 5px;
     cursor: pointer;
-    right: 10px;
+    right: 5px;
     color: var(--color-text);
     font-size: 27px;
     z-index: 10;
