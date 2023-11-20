@@ -8,6 +8,7 @@ import { login } from '../../services/user';
 
 import {useDispatch } from 'react-redux';
 import { setUser } from '../../feacture/user/userSlice';
+import { getAllWorkAreas } from '../../helpers/helpers';
 
 
 const Login = () => {
@@ -37,6 +38,24 @@ const Login = () => {
     return regex.test(email);
   }
 
+  // const getAllWorkAreas = async (accessToken,idUser) => {
+  //   try {
+  //     if (accessToken && idUser) {
+  //       const responseData = await getAllWorkAreasByIdUser(accessToken, idUser);
+  //       if (responseData.status === 200 && responseData.response) {
+  //         dispatch(setWorkAreas(responseData.data));
+  //         const list = [];
+  //         responseData.data.map((_,) => {
+  //           list.push({ isOpen: false });
+  //         });
+  //         dispatch(setListOpenDelete(list))
+  //       }
+  //     }
+  //   } catch (error) {
+  //     toast.error("Error al obtener tus areas de trabajo")
+  //   }
+  // }
+
   const loginUser=async (e)=>{
     e.preventDefault();
     try{
@@ -54,7 +73,9 @@ const Login = () => {
       if(validationEmail(credencials.email) && credencials.password!==""){
         const responseLogin=await login(credencials);
         if(responseLogin.status===200 && responseLogin.response){
-          dispatch(setUser(responseLogin.data));
+          const data=responseLogin.data;
+          await getAllWorkAreas({accessToken:data.accessToken,idUser:data.user?._id,dispatch});
+          dispatch(setUser(data));
           navigate(`${ROUTES.WORKS_AREAS}`);
         }else{
           toast.error(responseLogin.message);

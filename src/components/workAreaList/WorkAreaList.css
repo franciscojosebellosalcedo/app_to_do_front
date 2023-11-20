@@ -99,7 +99,16 @@
     background-color: var(--bg-hover);
     cursor: pointer;
     color: var(--color-text);
-
+    position: relative;
+}
+.icon__favorite{
+    position: absolute;
+    bottom: 10px;
+    cursor: pointer;
+    right: 10px;
+    color: var(--color-text);
+    font-size: 27px;
+    z-index: 10;
 }
 .item__create__board{
     padding: 0;

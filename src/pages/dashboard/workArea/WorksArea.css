@@ -1,12 +1,16 @@
 .conatiner__content{
     width: 90%;
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 .work__area__title{
     font-size: 20px;
     text-transform: uppercase;
     color: var(--color-text);
+    margin-bottom: 6px;
+}
+.icon__area__main{
+    margin-right: 7px;
 }
 .descripcion__work__area{
     color: var(--color-text);

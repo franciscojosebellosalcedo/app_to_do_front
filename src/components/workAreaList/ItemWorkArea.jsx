@@ -1,18 +1,24 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { handlerListOpenDelete, setOpenModalFormBoard } from "../../feacture/viewActive/viewActiveSlice";
+import { addBoardFavorite,removeBoardFavorite } from "../../feacture/board/boardSlice";
+import { changeStatusIsFavoriteBoard } from "../../feacture/workArea/workAreaSlice";
 import DeleteWorkArea from './DeleteWorkArea';
-import {  useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { changeStateIsFavoriteBoard } from "../../helpers/helpers.js";
 import { ROUTES } from '../../constanst/constants';
-
-
-
+import { editBoard } from '../../services/board';
+import { toast } from "sonner";
 
 const ItemWorkArea = ({ workArea, index }) => {
     const listOpenDelete = useSelector((state) => state.viewActive.data.listOpenDelete);
-    const navigate=useNavigate();
-
+    const accessToken=useSelector((state)=>state.user.data.accessToken);
+    const navigate = useNavigate();
     const dispatch = useDispatch();
+
+    const redirectBoard = (workArea, board) => {
+        navigate(ROUTES.WORK_AREA_BOARD + `/${workArea?._id}/board/${board?._id}`);
+    }
 
     return (
         <>
@@ -26,7 +32,7 @@ const ItemWorkArea = ({ workArea, index }) => {
                     </div>
 
                     <article className='item__options__work__area'>
-                        <div className='item__option' onClick={()=>navigate(ROUTES.WORK_AREA_DETAIL+`/${workArea?._id}`)}>
+                        <div className='item__option' onClick={() => navigate(ROUTES.WORK_AREA_DETAIL + `/${workArea?._id}`)}>
                             <i className="uil uil-th-large icon__board icon__option"></i> Tableros ({workArea?.boards?.length})
                         </div>
                         <div className='item__option'>
@@ -39,20 +45,23 @@ const ItemWorkArea = ({ workArea, index }) => {
 
                             {
                                 listOpenDelete && listOpenDelete[index]?.isOpen === true ?
-                                    <DeleteWorkArea workArea={workArea} index={index}/>
+                                    <DeleteWorkArea workArea={workArea} index={index} />
                                     : ""
                             }
 
                         </div>
                     </article>
                     <article className='container__boards'>
-                        <button onClick={()=>dispatch(setOpenModalFormBoard())} className='item__board item__create__board'>Crear un tablero nuevo</button>
+                        <button onClick={() => dispatch(setOpenModalFormBoard())} className='item__board item__create__board'>Crear un tablero nuevo</button>
                         {
                             workArea?.boards && workArea?.boards?.length > 0 ?
                                 <>
                                     {
                                         workArea?.boards.map((board, index) => (
-                                            <div key={index} className='item__board' style={{ backgroundColor: `${board?.colorBackground}` }}>{board?.title}</div>
+                                            <div onClick={() => redirectBoard(workArea, board)} key={index} className='item__board' style={{ backgroundColor: `${board?.colorBackground}` }}>
+                                                {board?.title}
+                                                <i className="uil uil-star icon__favorite" style={{color:board.isFavorite && "yellow"}} onClick={(e) => changeStateIsFavoriteBoard({e,board,accessToken,dispatch})}></i>
+                                            </div>
                                         ))
                                     }
                                 </> : ""

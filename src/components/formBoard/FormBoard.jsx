@@ -1,11 +1,12 @@
 import "./FormBoard.css";
 import { useDispatch, useSelector } from "react-redux";
 import { setOpenModalFormBoard } from "../../feacture/viewActive/viewActiveSlice";
-import { OPTIONS_COLOR } from "../../constanst/constants";
+import { OPTIONS_COLOR, ROUTES } from "../../constanst/constants";
 import { useState,useEffect } from "react";
 import {addNewBoard  } from "../../feacture/workArea/workAreaSlice";
 import {createNewBoard} from "../../services/board";
 import {toast } from 'sonner';
+import {useNavigate  } from "react-router-dom";
 
 const FormBoard = () => {
   const openModalFormBoard = useSelector((state) => state.viewActive.data.openModalFormBoard);
@@ -14,6 +15,7 @@ const FormBoard = () => {
   const [openOptionSelect, setOptionSelect] = useState(false);
   const [newBoard,setNewBoard]=useState({title:"",colorBackground:"",workArea:""});
   const [workAreaSelected,setWorkAreaSelected]=useState(null);
+  const navigate=useNavigate();
 
   const dispatch = useDispatch();
   const [listOptionColor, setListOptionColor] = useState([]);
@@ -54,6 +56,7 @@ const FormBoard = () => {
           dispatch(addNewBoard({_id:newBoard.workArea,newBoard:data}));
           setWorkAreaSelected(null);
           setNewBoard({...newBoard,title:"",colorBackground:OPTIONS_COLOR[0],workArea:""});
+          navigate(ROUTES.WORK_AREA_BOARD+`/${data?.workArea?._id}/board/${data?._id}`);
           toast.success(responseCreatedBoard.message);
         }else{
           toast.error(responseCreatedBoard.message);

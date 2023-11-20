@@ -7,6 +7,7 @@ import LoginGuard from '../guards/LoginGuard'
 import AuthGuard from '../guards/AuthGuard'
 import WorksArea from '../pages/dashboard/workArea/WorksArea'
 import WorkAreaDetails from '../pages/dashboard/workAreaDetails/WorkAreaDetails'
+import Board from '../pages/dashboard/board/Board'
 
 const Routers = () => {
   return (
@@ -28,6 +29,10 @@ const Routers = () => {
 
         <Route element={<AuthGuard />}>
           <Route path={ROUTES.WORK_AREA_DETAIL+"/:id"} element={<WorkAreaDetails/>}></Route>
+        </Route>
+
+        <Route element={<AuthGuard />}>
+          <Route path={ROUTES.WORK_AREA_BOARD+"/:idWorkArea/board/:idBoard"} element={<Board/>}></Route>
         </Route>
 
       </Routes>

@@ -18,6 +18,15 @@ export const getWorkArea=async (accessToken,id,idUser)=>{
     return await response.json();
 }
 
+export const editWorkArea=async (accessToken,body)=>{
+    const response=await fetch(URL_BASE+"/workArea/"+body._id,{
+        method:"PUT",
+        headers:{...headersWithAccessToken(headers,accessToken)},
+        body:JSON.stringify(body)
+    });
+    return await response.json();
+}
+
 export const createNewWorkArea=async (accessToken,body)=>{
     const response=await fetch(URL_BASE+"/workArea/",{
         method:"POST",

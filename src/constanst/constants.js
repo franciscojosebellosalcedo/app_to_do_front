@@ -5,6 +5,7 @@ export const ROUTES={
    REGISTER:"/register",
    WORKS_AREAS:"/works-areas",
    WORK_AREA_DETAIL:"/work-area",
+   WORK_AREA_BOARD:"/work-area",
    NOT_FOUND:"*"
 }
 
