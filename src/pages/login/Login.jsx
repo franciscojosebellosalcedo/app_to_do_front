@@ -38,24 +38,6 @@ const Login = () => {
     return regex.test(email);
   }
 
-  // const getAllWorkAreas = async (accessToken,idUser) => {
-  //   try {
-  //     if (accessToken && idUser) {
-  //       const responseData = await getAllWorkAreasByIdUser(accessToken, idUser);
-  //       if (responseData.status === 200 && responseData.response) {
-  //         dispatch(setWorkAreas(responseData.data));
-  //         const list = [];
-  //         responseData.data.map((_,) => {
-  //           list.push({ isOpen: false });
-  //         });
-  //         dispatch(setListOpenDelete(list))
-  //       }
-  //     }
-  //   } catch (error) {
-  //     toast.error("Error al obtener tus areas de trabajo")
-  //   }
-  // }
-
   const loginUser=async (e)=>{
     e.preventDefault();
     try{

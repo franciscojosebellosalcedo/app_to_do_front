@@ -5,21 +5,23 @@ import React from 'react'
 import Options from "./Options";
 import ListWorkAreas from "./ListWorkAreas";
 import { useDispatch, useSelector } from "react-redux";
-import { setOptions, setOpenWorksAreas } from "../../feacture/viewActive/viewActiveSlice";
+import { setOptions, setOpenWorksAreas,setOpenSearchNavBar } from "../../feacture/viewActive/viewActiveSlice";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../../constanst/constants";
 import FormWorkArea from "../formWorkArea/FormWorkArea";
 import FormBoard from "../formBoard/FormBoard";
+import SearchNavBar from "../searchNavBar/SearchNavBar";
 
 const NavBar = () => {
     const openListWorksArea = useSelector((state) => state.viewActive.data.openWorksAreas);
     const openOptions = useSelector((state) => state.viewActive.data.openOptions);
+    const openSearchNavBar = useSelector((state) => state.viewActive.data.openSearchNavBar);
     const dispatch = useDispatch();
     const navigate = useNavigate()
 
 
     return (
-        <header className="header">
+        <header className="background__element__absolute header">
             <nav className="nav">
                 <section className="nav__section section__left ">
                     <div className="item item1" onClick={() => navigate(ROUTES.WORKS_AREAS)}>
@@ -42,10 +44,8 @@ const NavBar = () => {
                     </div>
                 </section>
                 <section className="nav__section section__rigth ">
-                    <form className="form__search">
-                        <i className="uil uil-search icon__search"></i>
-                        <input className="input__search" type="search" placeholder="Buscar..." />
-                    </form>
+                    <i className="uil uil-search icon__search" onClick={()=>dispatch(setOpenSearchNavBar())}></i>
+                    {openSearchNavBar && <SearchNavBar/>}
                     <Avatar />
                 </section>
             </nav>

@@ -1,14 +1,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { handlerListOpenDelete, setOpenModalFormBoard } from "../../feacture/viewActive/viewActiveSlice";
-import { addBoardFavorite,removeBoardFavorite } from "../../feacture/board/boardSlice";
-import { changeStatusIsFavoriteBoard } from "../../feacture/workArea/workAreaSlice";
 import DeleteWorkArea from './DeleteWorkArea';
 import { useNavigate } from "react-router-dom";
 import { changeStateIsFavoriteBoard } from "../../helpers/helpers.js";
 import { ROUTES } from '../../constanst/constants';
-import { editBoard } from '../../services/board';
-import { toast } from "sonner";
+
 
 const ItemWorkArea = ({ workArea, index }) => {
     const listOpenDelete = useSelector((state) => state.viewActive.data.listOpenDelete);

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector,useDispatch } from "react-redux";
 import {setOpenWorksAreas  } from "../../feacture/viewActive/viewActiveSlice";
+import { ROUTES } from '../../constanst/constants';
 
 const ListWorkAreas = () => {
     const workAreas = useSelector((state) => state.workArea.data);
@@ -16,9 +17,9 @@ const ListWorkAreas = () => {
                         <>
                             {
                                 workAreas.map((workArea,index) => (
-                                    <article key={index} className='item__list'>
+                                    <a href={ROUTES.WORK_AREA_DETAIL+`/${workArea._id}`} key={index} className='item__list' >
                                         <div>{workArea?.name[0]}</div> <h3>{workArea?.name}</h3>
-                                    </article>
+                                    </a>
                                 ))
                             }
                         </>

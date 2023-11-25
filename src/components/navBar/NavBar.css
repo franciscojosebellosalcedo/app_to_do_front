@@ -1,6 +1,10 @@
 .header{
     width: 100%;
     border-bottom: var(--border);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    left: 0;
 }
 .nav{
     width: 98.8%;
@@ -17,6 +21,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    position: relative;
 }
 
 .section__left> div:first-child{
@@ -64,7 +69,6 @@
     top:65px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 100;
     width: 90%;
     height: max-content;
     padding: 10px 0px;
@@ -100,16 +104,8 @@
 .icon__search{
     margin-right:8px;
     font-size: 20px;
+    cursor: pointer;
 }
-.input__search{
-    height: 30px;
-    background-color: inherit;
-    border: 1px solid rgba(255, 255, 255, 0.473);
-    padding-left: 5px;
-    border-radius: 6px;
-    display: none;
-}
-
 
 .list__work__areas{
     position: fixed;
@@ -117,7 +113,7 @@
     top:65px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 100;
+    z-index: 500;
     width: 90%;
     height: max-content;
     background-color: rgb(37, 32, 43);
@@ -175,12 +171,6 @@
     }
     .item2 > div{
         font-size: 15px;
-    }
-    .icon__search{
-        display: none;
-    }
-    .input__search{
-        display: initial;
     }
 }
 @media screen and (min-width:580px){

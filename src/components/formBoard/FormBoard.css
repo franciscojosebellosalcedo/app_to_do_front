@@ -25,6 +25,7 @@
 .item__color{
     border-radius: 5px;  
     height: 40px;
+    cursor: pointer;
 }
 .item__color p{
     opacity: 0;
