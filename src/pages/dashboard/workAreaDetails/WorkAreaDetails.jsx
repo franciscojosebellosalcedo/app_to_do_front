@@ -85,7 +85,7 @@ const WorkAreaDetails = () => {
     const dataWorkArea=workArea;
     const indexBoard=dataWorkArea.boards.findIndex((b)=>b._id===response.idBoard);
     dataWorkArea.boards[indexBoard].isFavorite=response.status;
-    setWorkArea({...dataWorkArea})
+    setWorkArea({...dataWorkArea});
   }
 
   useEffect(() => {
@@ -157,7 +157,7 @@ const WorkAreaDetails = () => {
                     </article>
 
                     <article className='content__boards'>
-                      <h1 className='title__content__boards'>Tableros</h1>
+                      <h1 className='title__content__boards'><i className="uil uil-th-large icon__board"></i> Tableros</h1>
                       <div className='grid__boards'>
                         <button onClick={() => dispatch(setOpenModalFormBoard())} className='item__board item__create__board'>Crear un tablero nuevo</button>
                         {
