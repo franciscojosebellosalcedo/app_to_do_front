@@ -8,7 +8,7 @@ import AuthGuard from '../guards/AuthGuard'
 import WorksArea from '../pages/dashboard/workArea/WorksArea'
 import WorkAreaDetails from '../pages/dashboard/workAreaDetails/WorkAreaDetails'
 import Board from '../pages/dashboard/board/Board'
-import AboutUser from '../pages/dashboard/aboutUser/AboutUser'
+import AboutUser from '../pages/dashboard/manageAccount/AboutUser'
 
 const Routers = () => {
   return (

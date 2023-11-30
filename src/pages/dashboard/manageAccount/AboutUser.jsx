@@ -136,13 +136,13 @@ const AboutUser = () => {
                     </div>
                 </div>
                 <h1 className="title__about__user">Gestione su cuenta</h1>
-                <p className="paragrahp__about__user">Aquí podrá editar información sobre su cuenta, otras acciones como cambiar su contraseña.</p>
+                <p className="paragrahp__about__user">Aquí podrás editar información sobre tu cuenta, otras acciones como cambiar su contraseña.</p>
                 <h1 className="title__about__user__secundary">Acerca de {data.user?.email.split("@")[0]}</h1>
                 <figure className='dividor'></figure>
 
                 <section className="content__about__user">
-                    <div>
-                        <article className="accont__user">
+                    <div className="box__flex__articles">
+                        <article className="accont__user info__basic">
                             <h2 className={`title__block__info ${openInfoBasic && "rotate__arrow"}`} onClick={() => handlerOpenInfoBasic()}>Información basica <i className="uil uil-angle-right-b icon__open__item"></i></h2>
                             {
                                 openInfoBasic && <form className="form__info__basic form__about__user" >
@@ -161,11 +161,10 @@ const AboutUser = () => {
                             }
                         </article>
 
-                        <article className="accont__user">
+                        <article className="accont__user info__advance">
                             <h2 className={`title__block__info ${openInfoAdvance && "rotate__arrow"}`} onClick={() => handlerOpenInfoAdvance()}>Información avanzada <i className="uil uil-angle-right-b icon__open__item"></i></h2>
                             {
                                 openInfoAdvance && <>
-                                    <h3 className="title__block__change__password">Cambiar contraseña</h3>
                                     <form className="form__info__basic form__about__user" >
                                         <section className='form__section form__section__about__user'>
                                             <label htmlFor="input__password">Contraseña actual</label>

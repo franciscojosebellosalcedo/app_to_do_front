@@ -18,6 +18,10 @@ export const wiewActiveSlice = createSlice({
   initialState,
   reducers: {
     setOpenMenuUser:(state)=>{
+      for (let i = 0; i < state.data.listOpenDelete.length; i++) {
+        const option = state.data.listOpenDelete[i];
+        option.isOpen = false;
+      }
       state.data.openOptions = false;
       state.data.openWorksAreas = false;
       state.data.openDeleteWorkArea = false;
@@ -25,9 +29,14 @@ export const wiewActiveSlice = createSlice({
       state.data.openMenuUser =!state.data.openMenuUser;
     },
     setOpenSearchNavBar:(state)=>{
+      for (let i = 0; i < state.data.listOpenDelete.length; i++) {
+        const option = state.data.listOpenDelete[i];
+        option.isOpen = false;
+      }
       state.data.openOptions = false;
       state.data.openWorksAreas = false;
       state.data.openDeleteWorkArea = false;
+      state.data.openMenuUser =false;
       state.data.openSearchNavBar =!state.data.openSearchNavBar;
     },
     setListOpenDelete: (state, action) => {
@@ -59,36 +68,62 @@ export const wiewActiveSlice = createSlice({
       state.data.openOptions = false;
       state.data.openWorksAreas = false;
       state.data.openSearchNavBar =false;
+      state.data.openMenuUser =false;
     },
     setOpenDeleteWorkArea: (state) => {
+      for (let i = 0; i < state.data.listOpenDelete.length; i++) {
+        const option = state.data.listOpenDelete[i];
+        option.isOpen = false;
+      }
       state.data.openOptions = false;
       state.data.openWorksAreas = false;
       state.data.openSearchNavBar =false;
+      state.data.openMenuUser =false;
       state.data.openDeleteWorkArea = !state.data.openDeleteWorkArea;
     },
     setOptions: (state) => {
+      for (let i = 0; i < state.data.listOpenDelete.length; i++) {
+        const option = state.data.listOpenDelete[i];
+        option.isOpen = false;
+      }
       state.data.openWorksAreas = false;
       state.data.openSearchNavBar =false;
+      state.data.openMenuUser =false;
       state.data.openOptions = !state.data.openOptions;
 
     },
     setOpenWorksAreas: (state) => {
-      state.data.openWorksAreas = !state.data.openWorksAreas;
+      for (let i = 0; i < state.data.listOpenDelete.length; i++) {
+        const option = state.data.listOpenDelete[i];
+        option.isOpen = false;
+      }
       state.data.openSearchNavBar =false;
       state.data.openOptions = false;
+      state.data.openMenuUser =false;
+      state.data.openWorksAreas = !state.data.openWorksAreas;
     },
 
     //FORM FROM WORK AREA
     setOpenModal: (state) => {
+      for (let i = 0; i < state.data.listOpenDelete.length; i++) {
+        const option = state.data.listOpenDelete[i];
+        option.isOpen = false;
+      }
       state.data.openWorksAreas = false;
       state.data.openOptions = false;
       state.data.openSearchNavBar =false;
+      state.data.openMenuUser =false;
       state.data.openModal = !state.data.openModal;
     },
     setOpenModalFormBoard: (state) => {
+      for (let i = 0; i < state.data.listOpenDelete.length; i++) {
+        const option = state.data.listOpenDelete[i];
+        option.isOpen = false;
+      }
       state.data.openWorksAreas = false;
       state.data.openOptions = false;
       state.data.openModal = false;
+      state.data.openMenuUser =false;
       state.data.openModalFormBoard=!state.data.openModalFormBoard;
     },
   },

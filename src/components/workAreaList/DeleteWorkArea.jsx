@@ -1,6 +1,7 @@
 import { removeWorkArea } from "../../feacture/workArea/workAreaSlice";
 import { deleteOneWorkArea } from '../../services/workArea';
 import {removeOpenDelete ,handlerListOpenDelete} from "../../feacture/viewActive/viewActiveSlice";
+import {removeBoardsByWorkArea} from "../../feacture/board/boardSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 
@@ -21,7 +22,7 @@ const DeleteWorkArea = ({workArea,index}) => {
                 toast.success(responseDeleted.message);
                 dispatch(removeWorkArea(id));
                 dispatch(removeOpenDelete(index));
-
+                dispatch(removeBoardsByWorkArea(workArea._id));
             } else {
                 toast.error(responseDeleted.message);
             }

@@ -88,3 +88,17 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+@media screen and (min-width:740px) {
+    .box__flex__articles{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .accont__user{
+        width: 47%;
+    }
+    .btn__save__info__user{
+        width: 15%;
+    }
+}
