@@ -1,14 +1,22 @@
 import { ROUTES } from "../../constanst/constants";
 import "./MenuUser.css";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { removeUser } from "../../feacture/user/userSlice";
 
 const MenuUser = ({open,setOpen}) => {
+  const dispatch=useDispatch();
   const user = useSelector((state) => state.user.data.user);
   const navigate=useNavigate();
+
   const redirectTo=(url)=>{
     navigate(url);
     setOpen(false);
+  }
+
+  const logoutUser=(e)=>{
+    dispatch(removeUser());
+    navigate(ROUTES.LOGIN,{replace:true});
   }
 
   return (
@@ -23,7 +31,7 @@ const MenuUser = ({open,setOpen}) => {
         </div>
       </div>
       <button className="btn__menu__user admin__accconst" onClick={()=>redirectTo(ROUTES.ABOUT_USER)}><i className="uil uil-setting icon__admin__accont"></i> Administrar cuenta</button>
-      <button className="btn__menu__user close"><i className="uil uil-signin icon__logout"></i> Cerrar sesión</button>
+      <button onClick={(e)=>logoutUser(e)} className="btn__menu__user close"><i className="uil uil-signin icon__logout"></i> Cerrar sesión</button>
     </section>
   )
 }

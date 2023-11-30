@@ -28,10 +28,14 @@ export const userSlice=createSlice({
         },
         updateUser:(state,action)=>{
             state.data.user=action.payload;
+        },
+        removeUser:(state)=>{
+            state.data={};
+            localStorage.removeItem("data");
         }
     }
 })
 
-export const { setUser,updateUser } = userSlice.actions;
+export const { setUser,updateUser ,removeUser} = userSlice.actions;
 
 export default userSlice.reducer;
