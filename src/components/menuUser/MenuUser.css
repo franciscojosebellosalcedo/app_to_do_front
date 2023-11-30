@@ -1,0 +1,64 @@
+.menu__user{
+    top: 55px;
+    right: -1000px;
+    position: absolute;
+    width: 250px;
+    padding: 20px;
+    height: max-content;
+    transition: all .6s;
+}
+.icon__close__menu__user{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.see__menu__user{
+    right: 0;
+}
+.title__menu{
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+.info__user{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.btn__menu__user{
+    cursor: pointer;
+}
+.admin__accconst{
+    margin-bottom: 10px;
+}
+.email__user, .email__user--small{
+    white-space: nowrap;     
+    overflow: hidden;       
+    text-overflow: ellipsis;
+}
+.email__user--small{
+    font-size: 14px;
+}
+.logo__user{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+.flex__info{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.btn__menu__user{
+    background-color: inherit;
+}
+.icon__logout, .icon__admin__accont{
+    font-size: 20px;
+}

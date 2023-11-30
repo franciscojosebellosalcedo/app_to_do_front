@@ -8,11 +8,10 @@ import { login } from '../../services/user';
 
 import {useDispatch } from 'react-redux';
 import { setUser } from '../../feacture/user/userSlice';
-import { getAllWorkAreas } from '../../helpers/helpers';
+import { getAllWorkAreas, validationEmail } from '../../helpers/helpers';
 
 
 const Login = () => {
-  const regex =/[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}/;
   const [enableOtherInput,setEnableOtherInput]=useState(false);
   const [credencials,setCredencials]=useState({email:"",password:""});
   const [messageWarningPassword,setMessageWarningPassword]=useState("Por favor ingrese una contraseña");
@@ -32,10 +31,6 @@ const Login = () => {
     }
     setIsWarningPassword(false)
     setCredencials({...credencials,[target]:value});
-  }
-
-  const validationEmail=(email)=>{
-    return regex.test(email);
   }
 
   const loginUser=async (e)=>{

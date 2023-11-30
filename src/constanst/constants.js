@@ -6,6 +6,8 @@ export const ROUTES={
    WORKS_AREAS:"/works-areas",
    WORK_AREA_DETAIL:"/work-area",
    WORK_AREA_BOARD:"/work-area",
+
+   ABOUT_USER:"/about-user",
    NOT_FOUND:"*"
 }
 

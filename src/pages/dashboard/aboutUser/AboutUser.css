@@ -1,0 +1,90 @@
+.section__about__user{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+.icon__back__about__user{
+    font-size: 35px;
+    color: var(--color-text);
+    cursor: pointer;
+}
+.info__accont{
+    margin-top: 20px;
+    gap: 15px;
+}
+.info__accont *{
+    color: var(--color-text);
+}
+.logo__about__user{
+    height: 50px;
+    width: 50px;
+    font-size: 20px;
+}
+.email__about{
+    font-size: 25px;
+}
+.email__about__small{
+    font-size: 15px;
+}
+.title__about__user{
+    color: var(--color-text);
+    font-size: 20px;
+}
+.paragrahp__about__user{
+    color: var(--color-text);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.title__about__user__secundary{
+    font-size: 18px;
+    margin-top: 20px;
+    color: var(--color-text);
+}
+.title__block__info{
+    font-size: 15px;
+    color: var(--color-text);
+    margin-top: 20px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+.icon__open__item{
+    margin-left: 10px;
+    position: absolute;
+    transition: all .4s;
+}
+.rotate__arrow{
+    background-color: rgba(209, 193, 193, 0.135);
+    border-radius: 5px;
+}
+.rotate__arrow > i{
+    transform:rotate(90deg);
+}
+.form__info__basic{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.form__section__about__user > label{
+    font-size: 13px;
+    color: var(--color-text);
+    font-weight: 800;
+}
+.form__section__about__user > input{
+    height: 40px;
+}
+.title__block__change__password{
+    font-size: 13px;
+    color: var(--color-text);
+    margin-bottom: 15px;
+}
+.btn__save__info__user{
+    height: 40px;
+    background-color: var(--color-primary);
+    border-radius: 6px;
+    width: 100%;
+    color: var(--color-text);
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

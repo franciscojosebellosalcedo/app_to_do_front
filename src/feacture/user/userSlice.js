@@ -25,10 +25,13 @@ export const userSlice=createSlice({
                 user:action.payload.user
             }
             localStorage.setItem("data",JSON.stringify(dataUser));
+        },
+        updateUser:(state,action)=>{
+            state.data.user=action.payload;
         }
     }
 })
 
-export const { setUser } = userSlice.actions;
+export const { setUser,updateUser } = userSlice.actions;
 
 export default userSlice.reducer;
