@@ -17,6 +17,17 @@ export const wiewActiveSlice = createSlice({
   name: "view",
   initialState,
   reducers: {
+    resetAllViewsOpen:(state)=>{
+      for (let i = 0; i < state.data.listOpenDelete.length; i++) {
+        const option = state.data.listOpenDelete[i];
+        option.isOpen = false;
+      }
+      state.data.openOptions = false;
+      state.data.openWorksAreas = false;
+      state.data.openDeleteWorkArea = false;
+      state.data.openSearchNavBar =false;
+      state.data.openMenuUser=false;
+    },
     setOpenMenuUser:(state)=>{
       for (let i = 0; i < state.data.listOpenDelete.length; i++) {
         const option = state.data.listOpenDelete[i];
@@ -140,7 +151,8 @@ export const {
   removeOpenDelete,
   setOpenModalFormBoard,
   setOpenMenuUser,
-  setOpenSearchNavBar
+  setOpenSearchNavBar,
+  resetAllViewsOpen
 } = wiewActiveSlice.actions;
 
 export default wiewActiveSlice.reducer;

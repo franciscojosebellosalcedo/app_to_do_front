@@ -3,6 +3,7 @@ import "./MenuUser.css";
 import { useSelector,useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { removeUser } from "../../feacture/user/userSlice";
+import { resetAllViewsOpen } from "../../feacture/viewActive/viewActiveSlice";
 
 const MenuUser = ({open,setOpen}) => {
   const dispatch=useDispatch();
@@ -15,7 +16,9 @@ const MenuUser = ({open,setOpen}) => {
   }
 
   const logoutUser=(e)=>{
+    e.preventDefault();
     dispatch(removeUser());
+    dispatch(resetAllViewsOpen());
     navigate(ROUTES.LOGIN,{replace:true});
   }
 
