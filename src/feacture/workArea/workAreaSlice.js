@@ -18,6 +18,8 @@ export const workAreaSlice=createSlice({
         },
         removeWorkArea:(state,action)=>{
             state.data=state.data.filter((workArea)=>workArea?._id !== action.payload);
+            console.log(state.data)
+
         },
         addNewChangesWorkArea:(state,action)=>{
             const index=state.data.findIndex((workArea)=>workArea._id===action.payload._id);

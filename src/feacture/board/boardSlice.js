@@ -21,7 +21,9 @@ export const boardSlice=createSlice({
             state.data.favorites.unshift(action.payload);
         },
         removeBoardFavorite:(state,action)=>{
-            state.data.favorites.splice(state.data.favorites.findIndex((b)=>b._id===action.payload),1)
+            const index=state.data.favorites.findIndex((b)=>b._id===action.payload);
+            console.log(index)
+            state.data.favorites.splice(index,1);
         },
         removeBoardsByWorkArea:(state,action)=>{
             const list=state.data.list;
