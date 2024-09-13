@@ -104,7 +104,7 @@ const Login = () => {
           <button type='submit' onClick={(e)=>enableOtherInput === false ? continueAccess(e):loginUser(e)} className='primary btn__form__access'>{enableOtherInput=== false ? "Continuar":"Iniciar sesión"}</button>
         </section>
         <div className='container__links'>
-          <Link className='form__link' href="#">¿ Nesecitas ayuda ?</Link>
+          <Link className='form__link' href="#">¿ Olvidaste la contraseña ?</Link>
           <Link className='form__link' to={ROUTES.REGISTER} >Crear cuenta</Link>
         </div>
       </form>

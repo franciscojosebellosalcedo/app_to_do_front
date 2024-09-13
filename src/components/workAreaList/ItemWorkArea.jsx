@@ -32,9 +32,6 @@ const ItemWorkArea = ({ workArea, index }) => {
                         <div className='item__option' onClick={() => navigate(ROUTES.WORK_AREA_DETAIL + `/${workArea?._id}`)}>
                             <i className="uil uil-th-large icon__board icon__option"></i> Tableros ({workArea?.boards?.length})
                         </div>
-                        <div className='item__option'>
-                            <i className="uil uil-users-alt icon__members icon__option"></i> Miembros ({workArea?.members?.length})
-                        </div>
                         <div className='item__option item__option__delete'>
                             <div onClick={() => dispatch(handlerListOpenDelete(index))}>
                                 <i className="uil uil-trash-alt icon__delete icon__option"></i> Eliminar

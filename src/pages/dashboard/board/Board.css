@@ -1,4 +1,10 @@
 .container__board__details{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
+}
+
+.container__section__board__details{
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 80px;
 }
